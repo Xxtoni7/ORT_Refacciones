@@ -105,7 +105,7 @@ const Projects = () => {
                     <img  
                       className="w-full h-full object-cover"
                       alt={`Antes - ${project.title}`}
-                     src="https://images.unsplash.com/photo-1595872018818-97555653a011" />
+                     src="https://www.construyehogar.com/wp-content/uploads/2018/09/Renovacion-de-casas.jpg" />
                     <div className="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 rounded text-xs font-semibold">
                       ANTES
                     </div>
@@ -114,7 +114,7 @@ const Projects = () => {
                     <img  
                       className="w-full h-full object-cover"
                       alt={`Después - ${project.title}`}
-                     src="https://images.unsplash.com/photo-1595872018818-97555653a011" />
+                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTltoajBU5YJzSWdZPTLHSdr2seLajiV9X41Q&s" />
                     <div className="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded text-xs font-semibold">
                       DESPUÉS
                     </div>
@@ -140,7 +140,7 @@ const Projects = () => {
                   onClick={handleQuoteRequest}
                   className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-2 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 font-semibold"
                 >
-                  Solicitar Cotización Similar
+                  <a href="#contacto">Solicitar Cotización Similar</a>
                 </button>
               </div>
             </motion.div>
@@ -177,7 +177,7 @@ const Projects = () => {
                       <img  
                         className="w-full h-64 md:h-96 object-cover"
                         alt={`Antes - ${selectedProject.title}`}
-                       src="https://images.unsplash.com/photo-1595872018818-97555653a011" />
+                       src="https://www.construyehogar.com/wp-content/uploads/2018/09/Renovacion-de-casas.jpg" />
                       <div className="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded font-semibold">
                         ANTES
                       </div>
@@ -186,7 +186,7 @@ const Projects = () => {
                       <img  
                         className="w-full h-64 md:h-96 object-cover"
                         alt={`Después - ${selectedProject.title}`}
-                       src="https://images.unsplash.com/photo-1572177812156-58036aae439c" />
+                       src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTltoajBU5YJzSWdZPTLHSdr2seLajiV9X41Q&s" />
                       <div className="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded font-semibold">
                         DESPUÉS
                       </div>
@@ -198,10 +198,16 @@ const Projects = () => {
                     <h3 className="text-3xl font-bold text-gray-800 mb-4">{selectedProject.title}</h3>
                     <p className="text-gray-600 leading-relaxed mb-6">{selectedProject.description}</p>
                     <button
-                      onClick={handleQuoteRequest}
-                      className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 font-semibold"
-                    >
-                      Solicitar Cotización Similar
+                      onClick={() => {
+                        setSelectedProject(null); //  Cierra el modal
+                        setTimeout(() => {
+                          document.getElementById("contacto")?.scrollIntoView({ 
+                            behavior: "smooth" 
+                          });
+                        }, 300); // 🔹 Pequeño delay para que cierre primero el modal
+                      }}
+                      className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 font-semibold">
+                        Solicitar Cotización Similar
                     </button>
                   </div>
                 </div>
