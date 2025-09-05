@@ -65,14 +65,15 @@ const Hero = () => {
               size="lg"
               className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover-scale"
             >
-              Ver Nuestros Trabajos
+              <a href="#trabajos">Ver Nuestros Trabajos</a>
             </Button>
             <Button
+              href="#contacto"
               variant="outline"
               size="lg"
               className="border-2 border-white text-white hover:bg-white hover:text-gray-800 px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300"
             >
-              Solicitar Cotización
+              <a href="#contacto">Solicitar Cotización</a>
             </Button>
           </motion.div>
 
